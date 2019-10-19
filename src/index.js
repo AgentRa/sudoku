@@ -4,11 +4,9 @@ module.exports = function solveSudoku(matrix) {
       if( matrix[j][i] == 0) {
         let imposNum = [];
         let posNum = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        for( let i = 0; i < 9; i++) {
-          if (matrix[j][i] != 0) imposNum.push(matrix[j][i]); // checking row;
-        }
-        for( let j = 0; j < 9; j++) {
-          if (matrix[j][i] != 0) imposNum.push(matrix[j][i]); // checking col;
+        for (let k = 0; k < 9; k++) {
+          if (matrix[j][k] != 0) imposNum.push(matrix[j][k]); // checking row
+          if (matrix[k][i] != 0) imposNum.push(matrix[k][i]); // checking col
         }
         let iC = Math.trunc(i/3)*3; // ckecking every 3x3 digit
         let jC = Math.trunc(j/3)*3;
